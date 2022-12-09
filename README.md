@@ -1,1 +1,1 @@
-# browse [🔗](eric-jxl.github.io)
+# browse [🔗https://eric-jxl.github.io](https://eric-jxl.github.io)
