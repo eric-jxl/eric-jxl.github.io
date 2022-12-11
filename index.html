@@ -52,10 +52,10 @@
         }
       }
 
-      @media screen and (min-width: 375px) and (max-width: 751px) {
+      @media screen and (min-width: 375px) {
         html {
           /* 屏幕宽度从414px到1000px，根字号大小累积增加4px（18px-22px） */
-          font-size: calc(18px + 4 * (100vw - 414px) / 586);
+          font-size: calc(18px + 4 * (100vw - 375px) / 586);
         }
         body {
           background-image: url("https://imgapi.cn/api.php?zd=mobile&fl=fengjing&gs=images");
@@ -65,7 +65,7 @@
       @media screen and (min-width: 751px) {
         html {
           /* 屏幕宽度从1000px往后每增加100px，根字号大小就增加0.5px */
-          font-size: calc(25px + 5 * (100vw - 1000px) / 1000);
+          font-size: calc(25px + 5 * (100vw - 751px) / 1000);
         }
         body {
           background-image: url("https://imgapi.cn/api.php?zd=zsy&fl=fengjing&gs=images");
@@ -74,7 +74,7 @@
       @media screen and (min-width: 1200px) {
         html {
           /* 屏幕宽度从1000px往后每增加100px，根字号大小就增加0.5px */
-          font-size: calc(30px + 5 * (100vw - 1000px) / 1000);
+          font-size: calc(30px + 5 * (100vw - 1200px) / 1000);
         }
         body {
           background-image: url("https://pic1.xuehuaimg.com/proxy/https://source.unsplash.com/1600x900/?landscape");
