@@ -54,8 +54,8 @@
 
       @media screen and (min-width: 375px) {
         html {
-          /* 屏幕宽度从414px到1000px，根字号大小累积增加4px（18px-22px） */
-          font-size: calc(18px + 4 * (100vw - 375px) / 586);
+          /* 屏幕宽度从375px到751px，根字号大小累积增加4px（18px-22px） */
+          font-size: calc(18px + 4 * (100vw - 375px) / 375);
         }
         body {
           background-image: url("https://imgapi.cn/api.php?zd=mobile&fl=fengjing&gs=images");
@@ -64,8 +64,8 @@
 
       @media screen and (min-width: 751px) {
         html {
-          /* 屏幕宽度从1000px往后每增加100px，根字号大小就增加0.5px */
-          font-size: calc(25px + 5 * (100vw - 751px) / 1000);
+          /* 屏幕宽度从751px往后每增加100px，根字号大小就增加0.5px */
+          font-size: calc(25px + 5 * (100vw - 751px) / 751);
         }
         body {
           background-image: url("https://imgapi.cn/api.php?zd=zsy&fl=fengjing&gs=images");
@@ -73,8 +73,8 @@
       }
       @media screen and (min-width: 1200px) {
         html {
-          /* 屏幕宽度从1000px往后每增加100px，根字号大小就增加0.5px */
-          font-size: calc(30px + 5 * (100vw - 1200px) / 1000);
+          /* 屏幕宽度从1200px往后每增加100px，根字号大小就增加0.5px */
+          font-size: calc(30px + 5 * (100vw - 1200px) / 1200);
         }
         body {
           background-image: url("https://pic1.xuehuaimg.com/proxy/https://source.unsplash.com/1600x900/?landscape");
@@ -120,7 +120,6 @@
         height: auto;
         text-align: center;
         margin-top: 30px;
-        font-size: 40px;
       }
     </style>
   </head>
