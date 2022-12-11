@@ -3,7 +3,10 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, width=device-width, user-scalable=no"
+    />
     <link rel="Shortcut Icon" href="images/favicon.ico" />
     <title>考试倒计时</title>
 
@@ -14,8 +17,11 @@
       rel="stylesheet"
     /> -->
     <div>
-      <audio autoplay controls="controls" preload>
-        <source src="https://cdn.jsdelivr.net/gh/eric-jxl/eric-jxl.github.io@main/audio/F.I.R.%2B%E9%A3%9B%E5%85%92%E6%A8%82%E5%9C%98%2BLydia.mp3" type="audio/mpeg" />
+      <audio autoplay controls="controls" preload="auto">
+        <source
+          src="https://cdn.jsdelivr.net/gh/eric-jxl/eric-jxl.github.io@main/audio/F.I.R.%2B%E9%A3%9B%E5%85%92%E6%A8%82%E5%9C%98%2BLydia.mp3"
+          type="audio/mpeg"
+        />
         Your browser does not support the <code>audio</code> element.
       </audio>
     </div>
@@ -45,26 +51,43 @@
           color: #555;
         }
       }
-      @supports (display: flex) {
-        @media screen and (min-width: 400px) and (orientation: landscape) {
-          h1 {
-            font-size: 6vx;
-          }
+
+      @media screen and (min-width: 375px) and (max-width: 751px) {
+        html {
+          /* 屏幕宽度从414px到1000px，根字号大小累积增加4px（18px-22px） */
+          font-size: calc(18px + 4 * (100vw - 414px) / 586);
         }
-      }
-      @media print {
         body {
-          font-size: 10pt;
+          background-image: url("https://imgapi.cn/api.php?zd=mobile&fl=fengjing&gs=images");
         }
       }
+
+      @media screen and (min-width: 751px) {
+        html {
+          /* 屏幕宽度从1000px往后每增加100px，根字号大小就增加0.5px */
+          font-size: calc(25px + 5 * (100vw - 1000px) / 1000);
+        }
+        body {
+          background-image: url("https://imgapi.cn/api.php?zd=zsy&fl=fengjing&gs=images");
+        }
+      }
+      @media screen and (min-width: 1200px) {
+        html {
+          /* 屏幕宽度从1000px往后每增加100px，根字号大小就增加0.5px */
+          font-size: calc(30px + 5 * (100vw - 1000px) / 1000);
+        }
+        body {
+          background-image: url("https://pic1.xuehuaimg.com/proxy/https://source.unsplash.com/1600x900/?landscape");
+        }
+      }
+
       body {
         overflow: hidden;
         margin: 0;
         height: 100vh;
         cursor: wait;
         color-scheme: dark light;
-        background-image: url("https://source.unsplash.com/1600x900/?landscape");
-        /* background-color: transparent; */
+        /* background-image: url("https://source.unsplash.com/1600x900/?landscape"); */
       }
       @media (hover: hover) {
         h1:hover {
@@ -85,7 +108,7 @@
         /* text-shadow: 4px 4px 4px #aaa; */
         /* font-family: "Love Ya Like A Sister", cursive; */
 
-        font-size: 68px;
+        /* font-size: 68px; */
         color: #c70012;
         padding: 0 10px;
       }
