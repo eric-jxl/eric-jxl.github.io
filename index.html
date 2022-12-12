@@ -52,10 +52,9 @@
         }
       }
 
-      @media screen and (min-width: 375px) {
+      @media screen and (min-width: 320px) {
         html {
-          /* 屏幕宽度从375px到751px，根字号大小累积增加4px（18px-22px） */
-          font-size: calc(18px + 4 * (100vw - 375px) / 375);
+          font-size: calc(11px + 5 * (100vw - 320px) / 320);
         }
         body {
           background-image: url("https://imgapi.cn/api.php?zd=mobile&fl=fengjing&gs=images");
@@ -71,10 +70,10 @@
           background-image: url("https://imgapi.cn/api.php?zd=zsy&fl=fengjing&gs=images");
         }
       }
-      @media screen and (min-width: 1200px) {
+      @media screen and (min-width: 1000px) {
         html {
           /* 屏幕宽度从1200px往后每增加100px，根字号大小就增加0.5px */
-          font-size: calc(30px + 5 * (100vw - 1200px) / 1200);
+          font-size: calc(30px + 5 * (100vw - 1000px) / 1000);
         }
         body {
           background-image: url("https://pic1.xuehuaimg.com/proxy/https://source.unsplash.com/1600x900/?landscape");
