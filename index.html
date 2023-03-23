@@ -23,11 +23,12 @@
     <style>
       @font-face {
         font-family: "ZhiMangXing-Regular";
-        src: url("https://cdn.jsdelivr.net/gh/eric-jxl/eric-jxl.github.io@main/fonts/ZhiMangXing-Regular.ttf") format("opentype");
+        src: url("https://cdn.jsdelivr.net/gh/eric-jxl/eric-jxl.github.io@main/fonts/ZhiMangXing-Regular.ttf")
+          format("opentype");
         font-display: swap;
         font-weight: normal;
         font-style: normal;
-        font-stretch: 100%;
+        /* font-stretch: 100%; */
       }
 
       /* 暗黑模式 */
@@ -79,6 +80,7 @@
         height: 100vh;
         cursor: wait;
         color-scheme: dark light;
+        font-family: "ZhiMangXing-Regular", sans-serif;
         /* background-image: url("https://source.unsplash.com/1600x900/?landscape"); */
       }
       @media (hover: hover) {
@@ -95,7 +97,6 @@
         width: 100%;
         text-align: center;
         transform: translateY(-50%);
-        font-family: "ZhiMangXing-Regular", monospace;
         /* text-shadow: 4px 4px 4px #aaa; */
 
         color: #c70012;
@@ -123,6 +124,14 @@
     var canvas = document.querySelector("canvas"),
       ctx = canvas.getContext("2d");
     var ww, wh;
+    function preloadFont(fontName, fontURL) {
+      var newFont = new FontFace(fontName, "url(" + fontURL + ")");
+      newFont.load().then(function (loadedFont) {
+        document.fonts.add(loadedFont);
+      });
+    }
+
+    preloadFont("ZhiMangXing-Regular", "fonts/ZhiMangXing-Regular.ttf");
 
     function onResize() {
       ww = canvas.width = window.innerWidth;
