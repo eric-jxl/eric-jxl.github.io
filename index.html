@@ -124,15 +124,6 @@
     var canvas = document.querySelector("canvas"),
       ctx = canvas.getContext("2d");
     var ww, wh;
-    function preloadFont(fontName, fontURL) {
-      var newFont = new FontFace(fontName, "url(" + fontURL + ")");
-      newFont.load().then(function (loadedFont) {
-        document.fonts.add(loadedFont);
-      });
-    }
-
-    preloadFont("ZhiMangXing-Regular", "fonts/ZhiMangXing-Regular.ttf");
-
     function onResize() {
       ww = canvas.width = window.innerWidth;
       wh = canvas.height = window.innerHeight;
