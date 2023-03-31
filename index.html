@@ -8,12 +8,18 @@
       content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, width=device-width, user-scalable=no"
     />
     <link rel="Shortcut Icon" href="images/favicon.ico" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap"
+      rel="stylesheet"
+    />
     <title>新年倒计时</title>
 
     <div>
       <audio autoplay controls="controls" preload="auto">
         <source
-          src="https://cdn.jsdelivr.net/gh/eric-jxl/eric-jxl.github.io@main/audio/FIR-Lydia.mp3"
+          src="https://hub.gitmirror.com/https://github.com/eric-jxl/eric-jxl.github.io/blob/main/audio/FIR-Lydia.mp3"
           type="audio/mpeg"
         />
         Your browser does not support the <code>audio</code> element.
@@ -21,16 +27,6 @@
     </div>
 
     <style>
-      @font-face {
-        font-family: "ZhiMangXing-Regular";
-        src: url("/fonts/ZhiMangXing-Regular.ttf");
-        src: url("https://cdn.jsdelivr.net/gh/eric-jxl/eric-jxl.github.io@main/fonts/ZhiMangXing-Regular.ttf");
-        font-display: swap;
-        font-weight: normal;
-        font-style: normal;
-        font-stretch: 100%;
-      }
-
       /* 暗黑模式 */
       @media (prefers-color-scheme: dark) {
         body {
@@ -80,7 +76,7 @@
         height: 100vh;
         cursor: wait;
         color-scheme: dark light;
-        font-family: "ZhiMangXing-Regular", serif, sans-serif;
+        font-family: "Long Cang", cursive;
         /* background-image: url("https://source.unsplash.com/1600x900/?landscape"); */
       }
       @media (hover: hover) {
@@ -97,7 +93,6 @@
         width: 100%;
         text-align: center;
         transform: translateY(-50%);
-        /* text-shadow: 4px 4px 4px #aaa; */
 
         color: #c70012;
         padding: 0 10px;
