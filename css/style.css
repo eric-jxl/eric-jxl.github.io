@@ -1,0 +1,96 @@
+ /* 暗黑模式 */
+  @media (prefers-color-scheme: dark) {
+    body {
+      background: #333;
+      color: #fff;
+    }
+  }
+  /* 浅色模式 */
+  @media (prefers-color-scheme: light) {
+    body {
+      background: #fff;
+      color: #555;
+    }
+  }
+
+  @media screen and (min-width: 320px) {
+    html {
+      font-size: calc(12px + 5 * (100vw - 320px) / 320);
+    }
+    body {
+      background-image: url("https://imgapi.cn/api.php?zd=mobile&fl=fengjing&gs=images");
+    }
+  }
+
+  @media screen and (min-width: 751px) {
+    html {
+      /* 屏幕宽度从751px往后每增加100px，根字号大小就增加0.5px */
+      font-size: calc(26px + 5 * (100vw - 751px) / 751);
+    }
+    body {
+      background-image: url("https://imgapi.cn/api.php?zd=zsy&fl=fengjing&gs=images");
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    html {
+      /* 屏幕宽度从1200px往后每增加100px，根字号大小就增加0.5px */
+      font-size: calc(30px + 5 * (100vw - 1000px) / 1000);
+    }
+    body {
+      background-image: url("https://imgapi.cn/api.php?zd=pc&fl=fengjing&gs=images");
+    }
+  }
+
+  body {
+    overflow: hidden;
+    margin: 0;
+    height: 100vh;
+    cursor: wait;
+    color-scheme: dark light;
+    font-family: "Long Cang", cursive;
+    /* background-image: url("https://source.unsplash.com/1600x900/?landscape"); */
+  }
+  @media (hover: hover) {
+    h1:hover {
+      color: rgb(50, 50, 205);
+      transition-duration: 0.5s;
+    }
+  }
+
+  h1 {
+    position: fixed;
+    top: 30%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    transform: translateY(-50%);
+
+    color: #c70012;
+    padding: 0 10px;
+  }
+
+  h1 span {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-top: 30px;
+  }
+
+
+
+.rotateImages{
+    -webkit-animation:myRotate 10s linear infinite;
+    animation:myRotate 10s linear infinite;
+}
+@-webkit-keyframes myRotate{
+    0%{ -webkit-transform: rotate(0deg);}
+    50%{ -webkit-transform: rotate(180deg);}
+    100%{ -webkit-transform: rotate(360deg);}
+}
+@keyframes myRotate{
+    0%{ -webkit-transform: rotate(0deg);}
+    50%{ -webkit-transform: rotate(180deg);}
+    100%{ -webkit-transform: rotate(360deg);}
+}

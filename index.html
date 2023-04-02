@@ -14,233 +14,30 @@
       href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
     <title>新年倒计时</title>
-
-    <div>
-      <audio autoplay controls="controls" preload="auto">
-        <source
-          src="https://hub.gitmirror.com/https://github.com/eric-jxl/eric-jxl.github.io/blob/main/audio/FIR-Lydia.mp3"
-          type="audio/mpeg"
-        />
-        Your browser does not support the <code>audio</code> element.
-      </audio>
-    </div>
-
-    <style>
-      /* 暗黑模式 */
-      @media (prefers-color-scheme: dark) {
-        body {
-          background: #333;
-          color: #fff;
-        }
-      }
-      /* 浅色模式 */
-      @media (prefers-color-scheme: light) {
-        body {
-          background: #fff;
-          color: #555;
-        }
-      }
-
-      @media screen and (min-width: 320px) {
-        html {
-          font-size: calc(12px + 5 * (100vw - 320px) / 320);
-        }
-        body {
-          background-image: url("https://imgapi.cn/api.php?zd=mobile&fl=fengjing&gs=images");
-        }
-      }
-
-      @media screen and (min-width: 751px) {
-        html {
-          /* 屏幕宽度从751px往后每增加100px，根字号大小就增加0.5px */
-          font-size: calc(26px + 5 * (100vw - 751px) / 751);
-        }
-        body {
-          background-image: url("https://imgapi.cn/api.php?zd=zsy&fl=fengjing&gs=images");
-        }
-      }
-      @media screen and (min-width: 1000px) {
-        html {
-          /* 屏幕宽度从1200px往后每增加100px，根字号大小就增加0.5px */
-          font-size: calc(30px + 5 * (100vw - 1000px) / 1000);
-        }
-        body {
-          background-image: url("https://imgapi.cn/api.php?zd=pc&fl=fengjing&gs=images");
-        }
-      }
-
-      body {
-        overflow: hidden;
-        margin: 0;
-        height: 100vh;
-        cursor: wait;
-        color-scheme: dark light;
-        font-family: "Long Cang", cursive;
-        /* background-image: url("https://source.unsplash.com/1600x900/?landscape"); */
-      }
-      @media (hover: hover) {
-        h1:hover {
-          color: rgb(50, 50, 205);
-          transition-duration: 0.5s;
-        }
-      }
-
-      h1 {
-        position: fixed;
-        top: 30%;
-        left: 0;
-        width: 100%;
-        text-align: center;
-        transform: translateY(-50%);
-
-        color: #c70012;
-        padding: 0 10px;
-      }
-
-      h1 span {
-        position: fixed;
-        left: 0;
-        width: 100%;
-        height: auto;
-        text-align: center;
-        margin-top: 30px;
-      }
-    </style>
+    <img
+      src="./images/music-note-list.svg"
+      style="position: fixed; z-index: 10001; top: 20px; right: 20px"
+      onclick="let m = document.querySelector('.song-audio-autoplay'); if (m.paused ) {m.play(); this.className = 'rotateImages'} else {m.pause(); this.className = ''}"
+    />
+    <audio
+      class="song-audio-autoplay"
+      controls
+      loop
+      style="display: none; visibility: hidden"
+    >
+      <source
+        src="https://hub.gitmirror.com/https://github.com/eric-jxl/eric-jxl.github.io/blob/main/audio/FIR-Lydia.mp3"
+        type="audio/mp3"
+      />
+    </audio>
   </head>
 
   <body>
     <h1 id="h1"></h1>
-
     <canvas></canvas>
     <!--canvas 画布-->
   </body>
-  <script>
-    var canvas = document.querySelector("canvas"),
-      ctx = canvas.getContext("2d");
-    var ww, wh;
-    function onResize() {
-      ww = canvas.width = window.innerWidth;
-      wh = canvas.height = window.innerHeight;
-    }
-    ctx.strokeStyle = "red";
-    ctx.shadowBlur = 25;
-    ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
-    var precision = 100;
-    var hearts = [];
-    var mouseMoved = false;
-
-    function onMove(e) {
-      mouseMoved = true;
-      if (e.type === "touchmove") {
-        hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
-        hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
-      } else {
-        hearts.push(new Heart(e.clientX, e.clientY));
-        hearts.push(new Heart(e.clientX, e.clientY));
-      }
-    }
-
-    var Heart = function (x, y) {
-      this.x = x || Math.random() * ww;
-      this.y = y || Math.random() * wh;
-      this.size = Math.random() * 2 + 1;
-      this.shadowBlur = Math.random() * 10;
-      this.speedX = (Math.random() + 0.2 - 0.6) * 8;
-      this.speedY = (Math.random() + 0.2 - 0.6) * 8;
-      this.speedSize = Math.random() * 0.05 + 0.01;
-      this.opacity = 1;
-      this.vertices = [];
-
-      for (var i = 0; i < precision; i++) {
-        var step = (i / precision - 0.5) * (Math.PI * 2);
-
-        var vector = {
-          x: 15 * Math.pow(Math.sin(step), 3),
-
-          y: -(
-            13 * Math.cos(step) -
-            5 * Math.cos(2 * step) -
-            2 * Math.cos(3 * step) -
-            Math.cos(4 * step)
-          ),
-        };
-
-        this.vertices.push(vector);
-      }
-    };
-
-    Heart.prototype.draw = function () {
-      this.size -= this.speedSize;
-      this.x += this.speedX;
-      this.y += this.speedY;
-      ctx.save();
-      ctx.translate(-1000, this.y);
-      ctx.scale(this.size, this.size);
-      ctx.beginPath();
-      for (var i = 0; i < precision; i++) {
-        var vector = this.vertices[i];
-        ctx.lineTo(vector.x, vector.y);
-      }
-
-      ctx.globalAlpha = this.size;
-      ctx.shadowBlur = Math.round((3 - this.size) * 10);
-      ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
-      ctx.shadowOffsetX = this.x + 1000;
-      ctx.globalCompositeOperation = "screen";
-      ctx.closePath();
-      ctx.fill();
-      ctx.restore();
-    };
-
-    function render(a) {
-      requestAnimationFrame(render);
-      hearts.push(new Heart());
-      ctx.clearRect(0, 0, ww, wh);
-      for (var i = 0; i < hearts.length; i++) {
-        hearts[i].draw();
-        if (hearts[i].size <= 0) {
-          hearts.splice(i, 1);
-
-          i--;
-        }
-      }
-    }
-
-    onResize();
-    window.addEventListener("mousemove", onMove);
-    window.addEventListener("touchmove", onMove);
-    window.addEventListener("resize", onResize);
-    requestAnimationFrame(render);
-    window.onload = function starttime() {
-      time(h1, "2024/02/10"); // 2024年春节时间
-
-      ptimer = setTimeout(starttime, 1000); // 添加计时器
-    };
-
-    function time(obj, futimg) {
-      var nowtime = new Date().getTime(); // 现在时间转换为时间戳
-      var futruetime = new Date(futimg.replace(/\-/g, "/")).getTime(); // 未来时间转换为时间戳
-      var msec = futruetime - nowtime; // 毫秒 未来时间-现在时间
-      var time = msec / 1000; // 毫秒/1000
-      var day = parseInt(time / 86400); // 天 24*60*60*1000
-      var hour = parseInt(time / 3600) - 24 * day; // 小时 60*60 总小时数-过去的小时数=现在的小时数
-      var minute = parseInt((time % 3600) / 60); // 分 -(day*24) 以60秒为一整份 取余 剩下秒数 秒数/60 就是分钟数
-      var second = parseInt(time % 60); // 以60秒为一整份 取余 剩下秒数
-
-      obj.innerHTML =
-        "<br>距离2024年春节还有:<br>" +
-        day +
-        "天" +
-        hour +
-        "小时" +
-        minute +
-        "分" +
-        second +
-        "秒" +
-        "<br><span>愿我所念的人平安喜乐，<br>愿我所想的事顺心如意。<br>May the people I think of be safe and happy, <br>and may the things I think of be all right.</span>";
-
-      return true;
-    }
-  </script>
+  <script src="./js/timer.js" type="application/javascript"></script>
 </html>
