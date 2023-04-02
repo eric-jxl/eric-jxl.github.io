@@ -18,7 +18,7 @@
       font-size: calc(12px + 5 * (100vw - 320px) / 320);
     }
     body {
-      background-image: url("https://imgapi.cn/api.php?zd=mobile&fl=fengjing&gs=images");
+      background-image: url("https://imgapi.cn/api.php?zd=zsy&fl=fengjing&gs=images");
     }
   }
 
@@ -37,7 +37,7 @@
       font-size: calc(30px + 5 * (100vw - 1000px) / 1000);
     }
     body {
-      background-image: url("https://imgapi.cn/api.php?zd=pc&fl=fengjing&gs=images");
+      background-image: url("https://imgapi.cn/api.php?zd=zsy&fl=fengjing&gs=images");
     }
   }
 
