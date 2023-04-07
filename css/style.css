@@ -79,6 +79,10 @@
   }
 
 
+img:hover{
+  filter: hue-rotate(90deg);
+  transform: translateY(6px);
+}
 
 .rotateImages{
     -webkit-animation:myRotate 10s linear infinite;
