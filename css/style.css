@@ -78,6 +78,13 @@
     margin-top: 30px;
   }
 
+.f-fc6 {
+    color: #666;
+}
+a:hover .f-fc6,a.f-fc6:hover,a:hover {
+  color: #00AD4D;
+  text-decoration: none;
+}
 
 img:hover{
   filter: hue-rotate(90deg);

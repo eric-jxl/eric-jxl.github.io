@@ -3,8 +3,8 @@ var canvas = document.querySelector("canvas"),
 ctx = canvas.getContext("2d");
 var ww, wh;
 function onResize() {
-ww = canvas.width = window.innerWidth;
-wh = canvas.height = window.innerHeight;
+	ww = canvas.width = window.innerWidth;
+	wh = canvas.height = window.innerHeight;
 }
 ctx.strokeStyle = "red";
 ctx.shadowBlur = 25;
@@ -97,7 +97,6 @@ window.addEventListener("resize", onResize);
 requestAnimationFrame(render);
 window.onload = function starttime() {
 	time(h1, "2024/02/10"); // 2024年春节时间
-
 	ptimer = setTimeout(starttime, 1000); // 添加计时器
 };
 
