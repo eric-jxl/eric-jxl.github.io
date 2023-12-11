@@ -1,0 +1,24 @@
+{
+  "name": "eric-jxl.github.io",
+  "version": "1.0.0",
+  "description": "新年倒计时",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eric-jxl/eric-jxl.github.io.git"
+  },
+  "keywords": [
+    "New",
+    "Year",
+    "eric-jxl"
+  ],
+  "author": "eric-jxl",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eric-jxl/eric-jxl.github.io/issues"
+  },
+  "homepage": "https://github.com/eric-jxl/eric-jxl.github.io#readme"
+}
