@@ -1,6 +1,6 @@
 
 var canvas = document.querySelector("canvas"),
-ctx = canvas.getContext("2d");
+	ctx = canvas.getContext("2d");
 var ww, wh;
 function onResize() {
 	ww = canvas.width = window.innerWidth;
@@ -16,11 +16,11 @@ var mouseMoved = false;
 function onMove(e) {
 	mouseMoved = true;
 	if (e.type === "touchmove") {
-	hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
-	hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
+		hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
+		hearts.push(new Heart(e.touches[0].clientX, e.touches[0].clientY));
 	} else {
-	hearts.push(new Heart(e.clientX, e.clientY));
-	hearts.push(new Heart(e.clientX, e.clientY));
+		hearts.push(new Heart(e.clientX, e.clientY));
+		hearts.push(new Heart(e.clientX, e.clientY));
 	}
 }
 
@@ -35,22 +35,22 @@ var Heart = function (x, y) {
 	this.opacity = 1;
 	this.vertices = [];
 
-for (var i = 0; i < precision; i++) {
-  var step = (i / precision - 0.5) * (Math.PI * 2);
+	for (var i = 0; i < precision; i++) {
+		var step = (i / precision - 0.5) * (Math.PI * 2);
 
-  var vector = {
-    x: 15 * Math.pow(Math.sin(step), 3),
+		var vector = {
+			x: 15 * Math.pow(Math.sin(step), 3),
 
-    y: -(
-      13 * Math.cos(step) -
-      5 * Math.cos(2 * step) -
-      2 * Math.cos(3 * step) -
-      Math.cos(4 * step)
-    ),
-  };
+			y: -(
+				13 * Math.cos(step) -
+				5 * Math.cos(2 * step) -
+				2 * Math.cos(3 * step) -
+				Math.cos(4 * step)
+			),
+		};
 
-  this.vertices.push(vector);
-}
+		this.vertices.push(vector);
+	}
 };
 
 Heart.prototype.draw = function () {
@@ -62,8 +62,8 @@ Heart.prototype.draw = function () {
 	ctx.scale(this.size, this.size);
 	ctx.beginPath();
 	for (var i = 0; i < precision; i++) {
-	var vector = this.vertices[i];
-	ctx.lineTo(vector.x, vector.y);
+		var vector = this.vertices[i];
+		ctx.lineTo(vector.x, vector.y);
 	}
 
 	ctx.globalAlpha = this.size;
@@ -81,12 +81,11 @@ function render(a) {
 	hearts.push(new Heart());
 	ctx.clearRect(0, 0, ww, wh);
 	for (var i = 0; i < hearts.length; i++) {
-	hearts[i].draw();
-	if (hearts[i].size <= 0) {
-		hearts.splice(i, 1);
-
-		i--;
-	}
+		hearts[i].draw();
+		if (hearts[i].size <= 0) {
+			hearts.splice(i, 1);
+			i--;
+		}
 	}
 }
 
@@ -111,16 +110,16 @@ function time(obj, futimg) {
 	var second = parseInt(time % 60); // 以60秒为一整份 取余 剩下秒数
 
 	obj.innerHTML =
-	"<br>距离2024年春节还有:<br>" +
-	day +
-	"天" +
-	hour +
-	"小时" +
-	minute +
-	"分" +
-	second +
-	"秒" +
-	"<br><span>愿我所念的人平安喜乐，<br>愿我所想的事顺心如意。<br>May the people I think of be safe and happy, <br>and may the things I think of be all right.</span>";
+		"<br>距离2024年春节还有:<br>" +
+		day +
+		"天" +
+		hour +
+		"小时" +
+		minute +
+		"分" +
+		second +
+		"秒" +
+		"<br><span>愿我所念的人平安喜乐，<br>愿我所想的事顺心如意。<br>May the people I think of be safe and happy, <br>and may the things I think of be all right.</span>";
 
 	return true;
 }
