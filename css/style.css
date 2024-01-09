@@ -21,6 +21,7 @@
 
      body {
          background-image: url("https://imgapi.cn/api.php?zd=mobile&fl=fengjing&gs=images");
+         font-family: 'Long Cang';
      }
  }
 
@@ -32,7 +33,7 @@
 
      body {
          background-image: url("https://imgapi.cn/api.php?zd=zsy&fl=fengjing&gs=images");
-         font-family: 'Long Cang', sans-serif;
+         font-family: 'Long Cang';
      }
  }
 
@@ -44,7 +45,7 @@
 
      body {
          background-image: url("https://imgapi.cn/api.php?zd=zsy&fl=fengjing&gs=images");
-         font-family: "ZhiMangXing", sans-serif, fangsong;
+         font-family: "ZhiMangXing", sans-serif;
      }
  }
 
@@ -77,7 +78,7 @@
      width: 100%;
      text-align: center;
      transform: translateY(-50%);
-     color: #e64a12;
+     color: #d76c25;
      padding: 0 10px;
  }
 
