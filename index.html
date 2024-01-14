@@ -30,8 +30,8 @@
 
 <img src="./images/music-note-list.svg" style="position: fixed; z-index: 10001; top: 20px; right: 20px"
     onclick="let m = document.querySelector('.song-audio-autoplay'); if (m.paused ) {m.play(); this.className = 'rotateImages'} else {m.pause(); this.className = ''}" />
-<audio class="song-audio-autoplay" controls loop style="display: none; visibility: hidden">
-    <source src="audio/兰亭序.mp3" type="audio/mp3" />
+<audio class="song-audio-autoplay" preload="metadata" controls loop style="display: none; visibility: hidden">
+    <source src="audio/F.I.R.+飛兒樂團-我們的爱.mp3" type="audio/mp3" />
 </audio>
 
 <body>
