@@ -61,7 +61,6 @@
      height: 100vh;
      cursor: wait;
      color-scheme: dark light;
-     /* background-image: url("https://source.unsplash.com/1600x900/?landscape"); */
  }
 
  @media (hover: hover) {

@@ -37,13 +37,28 @@
 
 <img src="./images/music-note-list.svg" style="position: fixed; z-index: 10001; top: 20px; right: 20px"
     onclick="let m = document.querySelector('.song-audio-autoplay'); if (m.paused ) {m.play(); this.className = 'rotateImages'} else {m.pause(); this.className = ''}" />
-<audio class="song-audio-autoplay" preload="metadata" controls loop style="display: none; visibility: hidden">
-    <source src="audio/兰亭序.mp3" type="audio/mp3" />
-    <source src="audio/花海.mp3" type="audio/mp3" />
+<img src="./images/next.svg" alt="下一首" style="position: fixed; top: 30px;right: 4px;;" onclick="toggleAudio()" />
+<audio id="song-audio" class="song-audio-autoplay" preload="metadata" controls loop
+    style="display: none; visibility: hidden">
+    <source id="audio-source" src="audio/兰亭序.mp3" type="audio/mp3">
 </audio>
 
 <body>
     <h1 id="h1"></h1>
+    <script>
+        var audioIndex = 0; // 当前播放的歌曲索引
+        var audioSources = ["audio/兰亭序.mp3", "audio/花海.mp3", "audio/F.I.R.+飛兒樂團-我們的爱.mp3", "audio/FIR-Lydia.mp3"]; // 歌曲的URL列表
+        var audioElement = document.getElementById("song-audio");
+        var audioSourceElement = document.getElementById("audio-source"); // 切换播放
+        function toggleAudio() {
+            audioIndex = (audioIndex + 1) % audioSources.length; // 循环切换歌曲索引    
+            var audioSource = audioSources[audioIndex]; // 获取当前歌曲的URL    
+            audioSourceElement.src = audioSource; // 更新音频元素的src属性    
+            audioElement.load(); // 重新加载音频    
+            audioElement.play(); // 播放音频
+        }
+    </script>
+
     <!-- <p style="background: none;height: 5%;position: fixed;bottom: 0px;width: 100%;text-align: center; padding-top: 5%;">
         <a target="_blank" href="https://beian.miit.gov.cn/"
             style="display: inline-block;text-decoration: none;height: 20px;line-height: 20px;" class="f-fc6">
