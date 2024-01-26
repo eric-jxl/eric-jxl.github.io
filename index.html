@@ -37,8 +37,8 @@
 
 <img src="./images/music-note-list.svg" style="position: fixed; z-index: 10001; top: 20px; right: 20px"
     onclick="let m = document.querySelector('.song-audio-autoplay'); if (m.paused ) {m.play(); this.className = 'rotateImages'} else {m.pause(); this.className = ''}" />
-<img src="./images/next.svg" alt="下一首" style="position: fixed; top: 30px;right: 4px;;" onclick="toggleAudio()" />
-<audio id="song-audio" class="song-audio-autoplay" preload="metadata" controls loop
+<img src="./images/next.svg" alt="下一首" style="position: fixed; top: 80px;right: 48px;;" onclick="toggleAudio()" />
+<audio id="song-audio" class="song-audio-autoplay" preload="metadata" controls="" loop=""
     style="display: none; visibility: hidden">
     <source id="audio-source" src="audio/兰亭序.mp3" type="audio/mp3">
 </audio>
