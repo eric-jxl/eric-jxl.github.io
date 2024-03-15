@@ -110,7 +110,7 @@ function time(obj, futimg) {
 	var second = parseInt(time % 60); // 以60秒为一整份 取余 剩下秒数
 
 	obj.innerHTML =
-		"<br>距离2024年春节还有:<br>" +
+		"<br>距离2025年春节还有:<br>" +
 		day +
 		"天" +
 		hour +
