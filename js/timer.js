@@ -95,7 +95,7 @@ window.addEventListener("touchmove", onMove);
 window.addEventListener("resize", onResize);
 requestAnimationFrame(render);
 window.onload = function starttime() {
-	time(h1, "2024/02/10"); // 2024年春节时间
+	time(h1, "2025/01/29"); // 2025年春节时间
 	ptimer = setTimeout(starttime, 1000); // 添加计时器
 };
 
