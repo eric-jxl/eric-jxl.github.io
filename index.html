@@ -25,23 +25,16 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
-    <script type="text/javascript">
-        (function (c, l, a, r, i, t, y) {
-            c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments) };
-            t = l.createElement(r); t.async = 1; t.src = "https://www.clarity.ms/tag/" + i;
-            y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-        })(window, document, "clarity", "script", "kqrwej3rrf");
-    </script>
 
 </head>
 
-<img src="./images/music-note-list.svg" style="position: fixed; z-index: 10001; top: 20px; right: 20px"
+<img src="./images/music-note-list.svg" style="position: fixed; z-index: 10001; top: 20px; right: -10px"
     onclick="let m = document.querySelector('.song-audio-autoplay'); if (m.paused ) {m.play(); this.className = 'rotateImages'} else {m.pause(); this.className = ''}" />
-<img src="./images/next.svg" alt="下一首" style="position: fixed; top: 80px;right: 48px;;" onclick="toggleAudio()" />
+<!-- <img src="./images/next.svg" alt="下一首" style="position: fixed; top: 80px;right: 48px;;" onclick="toggleAudio()" />
 <audio id="song-audio" class="song-audio-autoplay" preload="metadata" controls="" loop=""
     style="display: none; visibility: hidden">
-    <source id="audio-source" src="audio/兰亭序.mp3" type="audio/mp3">
-</audio>
+    <source id="audio-source" src="audio/青花瓷.mp3" type="audio/mp3">
+</audio> -->
 
 <body>
     <h1 id="h1"></h1>
@@ -69,6 +62,9 @@
     <canvas></canvas>
 </body>
 <script src="./js/timer.js" type="application/javascript"></script>
-<script src="https://api.vvhan.com/api/script/bolang"></script>
+<!-- <script src="https://api.vvhan.com/api/script/bolang"></script> -->
+<script src="https://api.vvhan.com/api/script/yinghua"></script>
+<!-- <script src="https://api.vvhan.com/api/script/meihua"></script> -->
+<script src="https://api.vvhan.com/api/script/denglong"></script>
 
 </html>
