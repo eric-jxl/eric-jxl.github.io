@@ -90,10 +90,10 @@ function render(a) {
 }
 
 onResize();
-window.addEventListener("mousemove", onMove);
-window.addEventListener("touchmove", onMove);
-window.addEventListener("resize", onResize);
-requestAnimationFrame(render);
+// window.addEventListener("mousemove", onMove);
+// window.addEventListener("touchmove", onMove);
+// window.addEventListener("resize", onResize);
+// requestAnimationFrame(render);
 window.onload = function starttime() {
 	time(h1, "2025/01/29"); // 2025年春节时间
 	ptimer = setTimeout(starttime, 1000); // 添加计时器
@@ -142,7 +142,7 @@ function getData(url) {
 	});
 }
 getData("https://api.vvhan.com/api/visitor.info").then((data) => {
-	console.log(data)
+	console.log('%c 🍭 访问者信息：%s', 'color: #1e90ff;', JSON.stringify(data))
 }).catch((error) => {
 	console.error(error)
 })

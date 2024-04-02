@@ -30,11 +30,11 @@
 
 <img src="./images/music-note-list.svg" style="position: fixed; z-index: 10001; top: 20px; right: -10px"
     onclick="let m = document.querySelector('.song-audio-autoplay'); if (m.paused ) {m.play(); this.className = 'rotateImages'} else {m.pause(); this.className = ''}" />
-<!-- <img src="./images/next.svg" alt="下一首" style="position: fixed; top: 80px;right: 48px;;" onclick="toggleAudio()" />
+<!-- <img src="./images/next.svg" alt="下一首" style="position: fixed; top: 80px;right: 48px;;" onclick="toggleAudio()" /> -->
 <audio id="song-audio" class="song-audio-autoplay" preload="metadata" controls="" loop=""
     style="display: none; visibility: hidden">
     <source id="audio-source" src="audio/青花瓷.mp3" type="audio/mp3">
-</audio> -->
+</audio>
 
 <body>
     <h1 id="h1"></h1>
@@ -62,7 +62,7 @@
     <canvas></canvas>
 </body>
 <script src="./js/timer.js" type="application/javascript"></script>
-<!-- <script src="https://api.vvhan.com/api/script/bolang"></script> -->
+<script src="https://api.vvhan.com/api/script/bolang"></script>
 <script src="https://api.vvhan.com/api/script/yinghua"></script>
 <!-- <script src="https://api.vvhan.com/api/script/meihua"></script> -->
 <script src="https://api.vvhan.com/api/script/denglong"></script>
