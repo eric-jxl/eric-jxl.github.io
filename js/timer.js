@@ -142,7 +142,7 @@ function getData(url) {
 	});
 }
 getData("https://api.vvhan.com/api/visitor.info").then((data) => {
-	console.log('%c 🍭 访问者信息：%s', 'color: #1e90ff;', JSON.stringify(data))
+	console.log('%c 🍭 访问者信息：%s', 'color: #228B22;', JSON.stringify(data,null,2))
 }).catch((error) => {
 	console.error(error)
 })
