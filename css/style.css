@@ -49,11 +49,11 @@
      }
  }
 
-/*  @font-face {
+ @font-face {
      font-family: 'ZhiMangXing';
      src: url('../fonts/ZhiMangXing-Regular.ttf') format('truetype');
      font-display: swap;
- } */
+ }
 
  body {
      overflow: hidden;
