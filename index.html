@@ -37,6 +37,12 @@
 </audio>
 
 <body>
+    <div style="display: block; flex-flow: row;">
+        <div class="cf-turnstile"
+             data-sitekey="0x4AAAAAAAyK0cn5QKDdeaFj"
+             data-callback="javascriptCallback">
+         </div>
+    </div>
     <h1 id="h1"></h1>
     <script>
         var audioIndex = 0; // 当前播放的歌曲索引
@@ -50,6 +56,14 @@
             audioElement.load(); // 重新加载音频    
             audioElement.play(); // 播放音频
         }
+        window.onloadTurnstileCallback = function () {
+          turnstile.render(".cf-turnstile", {
+            sitekey: "0x4AAAAAAAyK0cn5QKDdeaFj",
+            callback: function (token) {
+              console.log(`Challenge Success ${token}`);
+            },
+          });
+        };
     </script>
 
     <!-- <p style="background: none;height: 5%;position: fixed;bottom: 0px;width: 100%;text-align: center; padding-top: 5%;">
