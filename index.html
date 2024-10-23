@@ -38,35 +38,11 @@
 </audio>
 
 <body>
-    <div style="display: block; flex-flow: row;z-index:99" id="cf-widget">
+    <div style="display:flex;justify-content: center;align-items: center;height:100%;" id="cf-widget">
         <div class="cf-turnstile" data-sitekey="0x4AAAAAAAyK0cn5QKDdeaFj" data-callback="javascriptCallback">
         </div>
     </div>
     <h1 id="h1"></h1>
-    <script>
-        var audioIndex = 0; // 当前播放的歌曲索引
-        var audioSources = ["audio/青花瓷.mp3", "audio/兰亭序.mp3", "audio/花海.mp3", "audio/F.I.R.+飛兒樂團-我們的爱.mp3", "audio/FIR-Lydia.mp3"]; // 歌曲的URL列表
-        var audioElement = document.getElementById("song-audio");
-        var audioSourceElement = document.getElementById("audio-source"); // 切换播放
-        function toggleAudio() {
-            audioIndex = (audioIndex + 1) % audioSources.length; // 循环切换歌曲索引    
-            var audioSource = audioSources[audioIndex]; // 获取当前歌曲的URL    
-            audioSourceElement.src = audioSource; // 更新音频元素的src属性    
-            audioElement.load(); // 重新加载音频    
-            audioElement.play(); // 播放音频
-        }
-        window.onloadTurnstileCallback = function () {
-            turnstile.render(".cf-turnstile", {
-                sitekey: "0x4AAAAAAAyK0cn5QKDdeaFj",
-                callback: function (token) {
-                    console.log(`Challenge Success ${token}`);
-                },
-            });
-        };
-        setTimeout(function () {
-            document.getElementById("cf-widget").style.display = "none";
-        }, 5000);
-    </script>
 
     <!-- <p style="background: none;height: 5%;position: fixed;bottom: 0px;width: 100%;text-align: center; padding-top: 5%;">
         <a target="_blank" href="https://beian.miit.gov.cn/"
@@ -75,11 +51,42 @@
             苏ICP备2021046889号-1
         </a>
     </p> -->
-    <canvas style="z-index:1"></canvas>
+    <canvas></canvas>
 </body>
 <script src="./js/timer.js" type="application/javascript"></script>
 <script src="https://api.vvhan.com/api/script/bolang"></script>
 <script src="https://api.vvhan.com/api/script/yinghua"></script>
 <script src="https://api.vvhan.com/api/script/denglong"></script>
+<script>
+    var audioIndex = 0; // 当前播放的歌曲索引
+    var audioSources = ["audio/青花瓷.mp3", "audio/兰亭序.mp3", "audio/花海.mp3", "audio/F.I.R.+飛兒樂團-我們的爱.mp3", "audio/FIR-Lydia.mp3"]; // 歌曲的URL列表
+    var audioElement = document.getElementById("song-audio");
+    var audioSourceElement = document.getElementById("audio-source"); // 切换播放
+    function toggleAudio() {
+        audioIndex = (audioIndex + 1) % audioSources.length; // 循环切换歌曲索引    
+        var audioSource = audioSources[audioIndex]; // 获取当前歌曲的URL    
+        audioSourceElement.src = audioSource; // 更新音频元素的src属性    
+        audioElement.load(); // 重新加载音频    
+        audioElement.play(); // 播放音频
+    }
+    window.onloadTurnstileCallback = function () {
+        turnstile.render(".cf-turnstile", {
+            sitekey: "0x4AAAAAAAyK0cn5QKDdeaFj",
+            callback: function (token) {
+                console.log(`Challenge Success ${token}`);
+            },
+        });
+    };
+    const widget = document.getElementById('cf-widget');
+    const h1 = document.querySelector('h1');
+    const canvas = document.querySelector('canvas');
+    setTimeout(() => {
+        // 隐藏 div
+        widget.style.display = 'none';
+        // 显示 h1 和 canvas
+        h1.style.display = 'block';
+        canvas.style.display = 'block';
+    }, 5000); // 5秒后切换
+</script>
 
 </html>

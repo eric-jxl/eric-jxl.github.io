@@ -138,3 +138,19 @@
          -webkit-transform: rotate(360deg);
      }
  }
+
+ #cf-widget {
+     display: grid;
+     justify-content: center;
+     align-items: center;
+     height: 100%;
+     background-color: lightblue;
+ }
+
+ #h1,
+ canvas {
+     display: none;
+     /* 初始隐藏 h1 和 canvas */
+     text-align: center;
+     margin-top: 20px;
+ }

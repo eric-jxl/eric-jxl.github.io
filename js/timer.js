@@ -1,17 +1,18 @@
 
-var canvas = document.querySelector("canvas"),
-	ctx = canvas.getContext("2d");
+var canvas = document.querySelector("canvas"); //获取canvas元素
+ctx = canvas.getContext("2d");
+ctx.strokeStyle = "red";
+ctx.shadowBlur = 25;
+ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
 var ww, wh;
+var precision = 100;
+var hearts = [];
+var mouseMoved = false;
+
 function onResize() {
 	ww = canvas.width = window.innerWidth;
 	wh = canvas.height = window.innerHeight;
 }
-ctx.strokeStyle = "red";
-ctx.shadowBlur = 25;
-ctx.shadowColor = "hsla(0, 100%, 60%,0.5)";
-var precision = 100;
-var hearts = [];
-var mouseMoved = false;
 
 function onMove(e) {
 	mouseMoved = true;
@@ -89,14 +90,15 @@ function render(a) {
 	}
 }
 
-window.addEventListener("mousemove", onMove);
-window.addEventListener("touchmove", onMove);
+// window.addEventListener("mousemove", onMove);
+// window.addEventListener("touchmove", onMove);
 window.addEventListener("resize", onResize);
 // requestAnimationFrame(render);
 window.onload = function starttime() {
 	time(h1, "2025/01/29"); // 2025年春节时间
 	ptimer = setTimeout(starttime, 1000); // 添加计时器
 };
+
 
 function time(obj, futimg) {
 	var nowtime = new Date().getTime(); // 现在时间转换为时间戳
