@@ -51,7 +51,7 @@
             苏ICP备2021046889号-1
         </a>
     </p> -->
-    <canvas></canvas>
+    <canvas id="canvas"></canvas>
 </body>
 <script src="./js/timer.js" type="application/javascript"></script>
 <script src="https://api.vvhan.com/api/script/bolang"></script>
@@ -77,15 +77,12 @@
             },
         });
     };
-    const widget = document.getElementById('cf-widget');
-    const h1 = document.querySelector('h1');
-    const canvas = document.querySelector('canvas');
     setTimeout(() => {
         // 隐藏 div
-        widget.style.display = 'none';
+        document.getElementById('cf-widget').style.display = 'none';
         // 显示 h1 和 canvas
-        h1.style.display = 'block';
-        canvas.style.display = 'block';
+        document.getElementById("canvas").style.display = "block";
+        document.getElementById("h1").style.display = 'block';
     }, 5000); // 5秒后切换
 </script>
 
