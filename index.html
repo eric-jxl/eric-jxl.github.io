@@ -5,7 +5,8 @@
     <meta charset="utf-8" />
     <title>新年倒计时</title>
     <meta name="description" content="动态新年倒计时网站,刷新可更换背景图">
-    <meta name="viewport" content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, width=device-width, user-scalable=no" />
+    <meta name="viewport"
+        content="initial-scale=0.5, maximum-scale=0.5, minimum-scale=0.5, width=device-width, user-scalable=no" />
     <meta property="og:title" content="新年倒计时">
     <meta property="og:type" content="website">
     <meta http-equiv="content-type" content="text/html;charset=utf-8">
@@ -37,11 +38,9 @@
 </audio>
 
 <body>
-    <div style="display: block; flex-flow: row;">
-        <div class="cf-turnstile"
-             data-sitekey="0x4AAAAAAAyK0cn5QKDdeaFj"
-             data-callback="javascriptCallback">
-         </div>
+    <div style="display: block; flex-flow: row;" id="cf-widget" z-index="999">
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAAyK0cn5QKDdeaFj" data-callback="javascriptCallback">
+        </div>
     </div>
     <h1 id="h1"></h1>
     <script>
@@ -57,13 +56,16 @@
             audioElement.play(); // 播放音频
         }
         window.onloadTurnstileCallback = function () {
-          turnstile.render(".cf-turnstile", {
-            sitekey: "0x4AAAAAAAyK0cn5QKDdeaFj",
-            callback: function (token) {
-              console.log(`Challenge Success ${token}`);
-            },
-          });
+            turnstile.render(".cf-turnstile", {
+                sitekey: "0x4AAAAAAAyK0cn5QKDdeaFj",
+                callback: function (token) {
+                    console.log(`Challenge Success ${token}`);
+                },
+            });
         };
+        setTimeout(function () {
+            document.getElementById("cf-widget").style.display = "none";
+        }, 5000);
     </script>
 
     <!-- <p style="background: none;height: 5%;position: fixed;bottom: 0px;width: 100%;text-align: center; padding-top: 5%;">
@@ -78,7 +80,6 @@
 <script src="./js/timer.js" type="application/javascript"></script>
 <script src="https://api.vvhan.com/api/script/bolang"></script>
 <script src="https://api.vvhan.com/api/script/yinghua"></script>
-<!-- <script src="https://api.vvhan.com/api/script/meihua"></script> -->
 <script src="https://api.vvhan.com/api/script/denglong"></script>
 
 </html>
