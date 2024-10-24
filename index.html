@@ -61,7 +61,7 @@
 <script src="https://api.vvhan.com/api/script/denglong" defer></script>
 <script>
     //加载cloudflare turnstile组建
-    function onloadTurnstileCallback() {
+    window.onloadTurnstileCallback = function () {
         turnstile.render("#my-turnstile", {
             sitekey: "0x4AAAAAAAyK0cn5QKDdeaFj",
             callback: function (token) {
