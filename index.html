@@ -26,9 +26,10 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet" /> -->
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onloadTurnstileCallback"
-        async defer></script>
-    <script src="./js/timer.js" type="application/javascript" async></script>
+    <link href="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onloadTurnstileCallback"
+        rel="preload" as="script" crossorigin="anonymous" defer>
+    </link>
+    <script src="./js/timer.js" type="application/javascript"></script>
 </head>
 
 <!-- <img src="./images/music-note-list.svg" style="position: fixed; z-index: 10001; top: 20px; right: -10px"
@@ -55,12 +56,12 @@
     </p> -->
     <canvas id="canvas"></canvas>
 </body>
-<script src="https://api.vvhan.com/api/script/bolang" async></script>
-<script src="https://api.vvhan.com/api/script/yinghua" async></script>
-<script src="https://api.vvhan.com/api/script/denglong" async></script>
+<script src="https://api.vvhan.com/api/script/bolang" defer></script>
+<script src="https://api.vvhan.com/api/script/yinghua" defer></script>
+<script src="https://api.vvhan.com/api/script/denglong" defer></script>
 <script>
     //加载cloudflare turnstile组建
-    window.onloadTurnstileCallback = function () {
+    function onloadTurnstileCallback() {
         turnstile.render("#my-turnstile", {
             sitekey: "0x4AAAAAAAyK0cn5QKDdeaFj",
             callback: function (token) {
