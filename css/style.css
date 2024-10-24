@@ -18,20 +18,12 @@
      html {
          font-size: calc(12px + 5 * (100vw - 320px) / 320);
      }
-
-     body {
-         background-image: url("https://imgapi.cn/api.php?zd=mobile&fl=fengjing&gs=images");
-     }
  }
 
  @media screen and (min-width: 768px) {
      html {
          /* 屏幕宽度从751px往后每增加100px，根字号大小就增加0.5px */
          font-size: calc(27px + 5 * (100vw - 768px) / 768);
-     }
-
-     body {
-         background-image: url("https://imgapi.cn/api.php?zd=zsy&fl=fengjing&gs=images");
      }
  }
 
@@ -41,17 +33,11 @@
          font-size: calc(30px + 5 * (100vw - 1200px) / 1200);
      }
 
+     /* 
      body {
          background-image: url("https://imgapi.cn/api.php?zd=zsy&fl=fengjing&gs=images");
-     }
+     } */
  }
-
- /* @font-face {
-     font-family: 'ZhiMangXing';
-     src: url('../fonts/ZhiMangXing-Regular.ttf') format('truetype');
-     font-display: swap;
-     font-style: normal;
- } */
 
  /* @font-face {
      font-family: 'Long Cang';
@@ -74,6 +60,7 @@
      height: 100vh;
      cursor: wait;
      color-scheme: dark light;
+     background-image: url('https://i.33xp.cn/__imgapi.cn__/__imgapi.cn__5ca59c9f78016.jpg');
  }
 
  @media (hover: hover) {
