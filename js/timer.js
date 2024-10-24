@@ -90,6 +90,25 @@ function render(a) {
 	}
 }
 
+// 获取Bing图片的函数
+function fetchBingImage() {
+	// Bing图片API的URL
+	const bingApiUrl = 'https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1';
+
+	// 发送请求获取Bing图片信息
+	fetch(bingApiUrl)
+		.then(response => response.json())
+		.then(data => {
+			// 获取图片URL
+			const imageUrl = 'https://cn.bing.com' + data.images[0].url;
+			// 设置背景图
+			document.body.style.backgroundImage = `url('${imageUrl}')`;
+		})
+		.catch(error => {
+			console.error('Error fetching Bing image:', error);
+		});
+}
+
 // window.addEventListener("mousemove", onMove);
 // window.addEventListener("touchmove", onMove);
 window.addEventListener("resize", onResize);
@@ -97,6 +116,7 @@ window.addEventListener("resize", onResize);
 window.onload = function starttime() {
 	time(h1, "2025/01/29"); // 2025年春节时间
 	ptimer = setTimeout(starttime, 1000); // 添加计时器
+	fetchBingImage();
 };
 
 
