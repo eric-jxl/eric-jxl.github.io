@@ -97,12 +97,13 @@ async function fetchBingImage() {
 
 	// 发送请求获取Bing图片信息
 	const response = await fetch(bingApiUrl, {
+		method: 'GET',
 		headers: {
 			"Access-Control-Allow-Origin": "*",
 			"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-			"Access-Control-Allow-Headers": "Content-Type, Authorization",
 			"Content-Type": "application/json"
-		}
+		},
+		mode: 'cors'
 	})
 		.then(response => response.json())
 		.then(data => {
