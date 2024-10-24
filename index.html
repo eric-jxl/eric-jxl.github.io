@@ -25,8 +25,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet" /> -->
-    <link rel="stylesheet" href="./css/style.css" type="text/css" async />
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=_turnstileCb" defer></script>
 </head>
 
 <img src="./images/music-note-list.svg" style="position: fixed; z-index: 10001; top: 20px; right: -10px"
@@ -39,7 +39,7 @@
 
 <body>
     <div id="cf-widget">
-        <div class="cf-turnstile" data-sitekey="0x4AAAAAAAyK0cn5QKDdeaFj" data-callback="javascriptCallback">
+        <div id="my-turnstile" class="cf-turnstile" data-callback="javascriptCallback">
         </div>
     </div>
     <h1 id="h1"></h1>
@@ -69,10 +69,10 @@
         audioElement.load(); // 重新加载音频    
         audioElement.play(); // 播放音频
     }
-    // 加载cloudflare turnstile组建
-    window.onloadTurnstileCallback = function () {
+    //加载cloudflare turnstile组建
+    function _turnstileCb() {
         console.log('加载cloudflare turnstile组建');
-        turnstile.render(".cf-turnstile", {
+        turnstile.render("#my-turnstile", {
             sitekey: "0x4AAAAAAAyK0cn5QKDdeaFj",
             callback: function (token) {
                 var turnstileWidget = document.getElementById('cf-widget');
@@ -83,7 +83,6 @@
             },
         });
     };
-
 </script>
 
 </html>
