@@ -60,7 +60,7 @@
      height: 100vh;
      cursor: wait;
      color-scheme: dark light;
-     background-image: url('https://i.33xp.cn/__imgapi.cn__/__imgapi.cn__5ca59c9f78016.jpg');
+     background-image: url('../images/bgi.webp');
  }
 
  @media (hover: hover) {
