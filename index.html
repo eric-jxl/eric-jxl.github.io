@@ -26,7 +26,8 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet" /> -->
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=turnstileCb" defer async></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async
+        defer></script>
 </head>
 
 <img src="./images/music-note-list.svg" style="position: fixed; z-index: 10001; top: 20px; right: -10px"
@@ -70,7 +71,7 @@
         audioElement.play(); // 播放音频
     }
     //加载cloudflare turnstile组建
-    function turnstileCb() {
+    window.onloadTurnstileCallback = function () {
         turnstile.render("#my-turnstile", {
             sitekey: "0x4AAAAAAAyK0cn5QKDdeaFj",
             callback: function (token) {
