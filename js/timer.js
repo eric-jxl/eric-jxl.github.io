@@ -124,7 +124,7 @@ window.addEventListener("resize", onResize);
 window.onload = function starttime() {
 	time(h1, "2025/01/29"); // 2025年春节时间
 	ptimer = setTimeout(starttime, 1000); // 添加计时器
-	fetchBingImage();
+	// fetchBingImage();
 };
 
 
