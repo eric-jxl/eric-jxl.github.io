@@ -21,10 +21,10 @@
     <meta name="mobile-web-app-capable" content="yes">
 
     <link rel="Shortcut Icon" href="images/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
-    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet" /> -->
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
@@ -69,21 +69,20 @@
         audioElement.load(); // 重新加载音频    
         audioElement.play(); // 播放音频
     }
+    // 加载cloudflare turnstile组建
     window.onloadTurnstileCallback = function () {
         turnstile.render(".cf-turnstile", {
             sitekey: "0x4AAAAAAAyK0cn5QKDdeaFj",
             callback: function (token) {
-                console.log(`Challenge Success ${token}`);
+                var turnstileWidget = document.getElementById('cf-widget');
+                turnstileWidget.style.display = 'none';
+                document.getElementById("canvas").style.display = "block";
+                document.getElementById("h1").style.display = 'block';
+                console.log(`Turnstile验证成功，加载网站内容 ${token}`);
             },
         });
     };
-    setTimeout(() => {
-        // 隐藏 div
-        document.getElementById('cf-widget').style.display = 'none';
-        // 显示 h1 和 canvas
-        document.getElementById("canvas").style.display = "block";
-        document.getElementById("h1").style.display = 'block';
-    }, 5000); // 5秒后切换
+
 </script>
 
 </html>
