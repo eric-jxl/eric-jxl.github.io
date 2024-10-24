@@ -91,12 +91,19 @@ function render(a) {
 }
 
 // 获取Bing图片的函数
-function fetchBingImage() {
+async function fetchBingImage() {
 	// Bing图片API的URL
 	const bingApiUrl = 'https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1';
 
 	// 发送请求获取Bing图片信息
-	fetch(bingApiUrl)
+	const response = await fetch(bingApiUrl, {
+		headers: {
+			"Access-Control-Allow-Origin": "*",
+			"Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+			"Access-Control-Allow-Headers": "Content-Type, Authorization",
+			"Content-Type": "application/json"
+		}
+	})
 		.then(response => response.json())
 		.then(data => {
 			// 获取图片URL
