@@ -25,7 +25,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet" /> -->
-    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    <link rel="stylesheet" href="./css/style.css" type="text/css" async />
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 </head>
 
@@ -71,6 +71,7 @@
     }
     // 加载cloudflare turnstile组建
     window.onloadTurnstileCallback = function () {
+        console.log('加载cloudflare turnstile组建');
         turnstile.render(".cf-turnstile", {
             sitekey: "0x4AAAAAAAyK0cn5QKDdeaFj",
             callback: function (token) {

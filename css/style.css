@@ -55,13 +55,13 @@
      font-display: swap;
  }
 
- @font-face {
+ /* @font-face {
      font-family: 'Long Cang';
      font-style: normal;
      font-weight: 400;
      font-display: swap;
      src: url('../fonts/LYjAdGP8kkgoTec8zkRgrQ.ttf') format('truetype');
- }
+ } */
 
  body {
      overflow: hidden;
