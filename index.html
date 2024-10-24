@@ -26,8 +26,8 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet" /> -->
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onloadTurnstileCallback"
-        defer async></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer
+        async></script>
 </head>
 
 <!-- <img src="./images/music-note-list.svg" style="position: fixed; z-index: 10001; top: 20px; right: -10px"
@@ -58,7 +58,7 @@
 <script src="https://api.vvhan.com/api/script/yinghua" defer></script>
 <script src="https://api.vvhan.com/api/script/denglong" defer></script>
 <script src="./js/timer.js" type="application/javascript"></script>
-<script>
+<script defer>
     //加载cloudflare turnstile组建
     window.onloadTurnstileCallback = function () {
         turnstile.render("#my-turnstile", {
