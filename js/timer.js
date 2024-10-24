@@ -175,17 +175,3 @@ function getData(url) {
 // }).catch((error) => {
 // 	console.error(error)
 // })
-
-//加载cloudflare turnstile组建
-window.onloadTurnstileCallback = function () {
-	turnstile.render("#my-turnstile", {
-		sitekey: "0x4AAAAAAAyK0cn5QKDdeaFj",
-		callback: function (token) {
-			var turnstileWidget = document.getElementById('cf-widget');
-			turnstileWidget.style.display = 'none';
-			document.getElementById("canvas").style.display = "block";
-			document.getElementById("h1").style.display = 'block';
-			console.log("Turnstile验证成功，加载网站内容");
-		},
-	});
-};
