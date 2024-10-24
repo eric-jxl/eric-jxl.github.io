@@ -26,8 +26,8 @@
     <link rel="dns-prefetch" href="https://fonts.gstatic.com/">
     <link href="https://fonts.googleapis.com/css2?family=Long+Cang&display=swap" rel="stylesheet" /> -->
     <link rel="stylesheet" href="./css/style.css" type="text/css" />
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" async
-        defer></script>
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onloadTurnstileCallback"
+        async defer></script>
 </head>
 
 <img src="./images/music-note-list.svg" style="position: fixed; z-index: 10001; top: 20px; right: -10px"
@@ -40,7 +40,7 @@
 
 <body>
     <div id="cf-widget">
-        <div id="my-turnstile" class="cf-turnstile" data-callback="javascriptCallback">
+        <div id="my-turnstile" class="cf-turnstile" data-callback="javascriptCallback" data-size="flexible">
         </div>
     </div>
     <h1 id="h1"></h1>
