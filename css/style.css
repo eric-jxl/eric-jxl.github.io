@@ -139,7 +139,7 @@
      }
  }
 
- #cf-widget {
+ /* #cf-widget {
      display: grid;
      justify-content: center;
      align-items: center;
@@ -150,7 +150,6 @@
  #h1,
  canvas {
      display: none;
-     /* 初始隐藏 h1 和 canvas */
      text-align: center;
      margin-top: 20px;
- }
+ }*/
