@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>新年倒计时</title>
+    <meta name="description" content="动态新年倒计时网站,刷新可更换背景图">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <meta property="og:title" content="新年倒计时">
+    <meta property="og:type" content="website">
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta name="keywords" content="新年倒计时,New Year Countdown,Happy New Year">
+    <meta name="robots" content="index,follow">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta http-equiv="Cache-Control" content="no-cache" max-age="0">
+    <meta name="baidu-site-verification" content="BYFmFBILbh">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <link rel="Shortcut Icon" href="images/favicon.ico" />
+    <!-- Google Fonts CDN -->
+    <link rel="stylesheet" href="https://cdn.iocdn.cc/css2?family=Zhi+Mang+Xing&display=swap" type="text/css" />
+    <link rel="stylesheet" href="./css/style.css" type="text/css" />
+    <!-- <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer -->
+    <!-- async></script> -->
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-SBG4RCYQS1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-SBG4RCYQS1');
+    </script> -->
+</head>
+
+<!-- <img src="./images/music-note-list.svg" style="position: fixed; z-index: 10001; top: 20px; right: -10px"
+    onclick="let m = document.querySelector('.song-audio-autoplay'); if (m.paused ) {m.play(); this.className = 'rotateImages'} else {m.pause(); this.className = ''}" />
+
+<audio id="song-audio" class="song-audio-autoplay" preload="auto" controls="" loop=""
+    style="display: none; visibility: hidden">
+    <source id="audio-source" src="audio/青花瓷.mp3" type="audio/mp3">
+</audio> -->
+
+<body>
+    <!-- <div id="cf-widget">
+        <div id="my-turnstile" class="cf-turnstile" data-callback="javascriptCallback" data-size="flexible">
+        </div>
+    </div> -->
+    <h1 id="h1"></h1>
+
+    <!-- <p style="background: none;height: 5%;position: fixed;bottom: 0px;width: 100%;text-align: center; padding-top: 5%;">
+        <a target="_blank" href="https://beian.miit.gov.cn/"
+            style="display: inline-block;text-decoration: none;height: 20px;line-height: 20px;" class="f-fc6">
+            <img src="images/165017948480754147.png" style="display: inline;" />
+            苏ICP备2021046889号-1
+        </a>
+    </p> -->
+    <canvas id="canvas"></canvas>
+</body>
+<script src="https://api.vvhan.com/api/script/bolang" async></script>
+<script src="https://api.vvhan.com/api/script/yinghua" async></script>
+<script src="https://api.vvhan.com/api/script/denglong" async></script>
+<script src="./js/timer.js" type="application/javascript"></script>
+<!-- <script>
+    //加载cloudflare turnstile组建
+    window.onloadTurnstileCallback = function () {
+        turnstile.render("#my-turnstile", {
+            sitekey: "0x4AAAAAAAyK0cn5QKDdeaFj",
+            callback: function (token) {
+                var turnstileWidget = document.getElementById('cf-widget');
+                turnstileWidget.style.display = 'none';
+                document.getElementById("canvas").style.display = "block";
+                document.getElementById("h1").style.display = 'block';
+                console.log("Turnstile验证成功，加载网站内容");
+            },
+        });
+    };
+</script> -->
+
+</html>
