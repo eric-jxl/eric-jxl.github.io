@@ -16,7 +16,7 @@
 
  @media screen and (min-width: 320px) {
      html {
-         font-size: calc(13px + 5 * (100vw - 375px) / 375);
+         font-size: calc(14px + 5 * (100vw - 375px) / 375);
      }
 
      body {
@@ -27,7 +27,7 @@
  @media screen and (min-width: 768px) {
      html {
          /* 屏幕宽度从751px往后每增加100px，根字号大小就增加0.5px */
-         font-size: calc(27px + 5 * (100vw - 768px) / 768);
+         font-size: calc(28px + 5 * (100vw - 768px) / 768);
      }
 
      body {
@@ -38,7 +38,7 @@
  @media screen and (min-width: 1200px) {
      html {
          /* 屏幕宽度从1000px往后每增加100px，根字号大小就增加0.5px */
-         font-size: calc(30px + 5 * (100vw - 1200px) / 1200);
+         font-size: calc(31px + 5 * (100vw - 1200px) / 1200);
      }
 
      body {
@@ -73,7 +73,7 @@
      width: 100%;
      text-align: center;
      transform: translateY(-50%);
-     color: #d76c25;
+     color: #FFFFFF;
      padding: 0 10px;
  }
 
