@@ -148,7 +148,7 @@ function time(obj, futimg) {
 		"分" +
 		second +
 		"秒" +
-		"<br><span>愿我所念的人平安喜乐，<br>愿我所想的事顺心如意。<br>May the people I think of be safe and happy,<br>and may the things I think of be all right.</span>";
+		"<br><span>愿我所念的人平安喜乐，<br>愿我所想的事顺心如意。<br>";
 
 	return true;
 }
