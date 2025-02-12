@@ -14,31 +14,20 @@
      }
  }
 
- @media screen and (min-width: 320px) {
+ @media screen and (min-width: 320px) and (max-width: 1199px) {
      html {
-         font-size: calc(14px + 5 * (100vw - 375px) / 375);
+         font-size: calc(16px + 5 * (100vw - 375px) / 375);
      }
 
      body {
-         background-image: url("https://s.cn.bing.net/th?id=OHR.MontBlancMassif_ZH-CN9172264924_768x1366.webp&qlt=50");
-     }
- }
-
- @media screen and (min-width: 768px) {
-     html {
-         /* 屏幕宽度从751px往后每增加100px，根字号大小就增加0.5px */
-         font-size: calc(28px + 5 * (100vw - 768px) / 768);
-     }
-
-     body {
-         background-image: url("https://s.cn.bing.net/th?id=OHR.MontBlancMassif_ZH-CN9172264924_768x1366.webp&qlt=50");
+         background-image: url("https://imgapi.cn/api.php?zd=mobile&fl=fengjing&gs=images");
      }
  }
 
  @media screen and (min-width: 1200px) {
      html {
          /* 屏幕宽度从1000px往后每增加100px，根字号大小就增加0.5px */
-         font-size: calc(31px + 5 * (100vw - 1200px) / 1200);
+         font-size: calc(32px + 5 * (100vw - 1200px) / 1200);
      }
 
      body {
@@ -54,9 +43,7 @@
      cursor: wait;
      color-scheme: dark light;
      font-family: "Zhi Mang Xing", cursive;
-     font-weight: 400;
      font-style: normal;
-     font-display: swap;
  }
 
  @media (hover: hover) {
@@ -68,7 +55,7 @@
 
  h1 {
      position: fixed;
-     top: 20%;
+     top: 25%;
      left: 0;
      width: 100%;
      text-align: center;
