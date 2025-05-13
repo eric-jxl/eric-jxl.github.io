@@ -1,5 +1,16 @@
 ***This is a New Year countdown project with its own background music and special effects***
 
+## 一键部署
+
+### Vercel 自动部署
+
+[![vhAstro-Theme](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/eric-jxl/eric-jxl.github.io)
+
+### Cloudflare Pages 自动部署
+
+[![vhAstro-Theme](https://deploy.workers.cloudflare.com/button)](https://dash.cloudflare.com/?to=/:account/workers-and-pages/create/deploy-to-workers&repository=https://github.com/eric-jxl/eric-jxl.github.io)
+
+
 ## 鸣谢
 
 特别感谢 [JetBrains](https://www.jetbrains.com/) 为开源项目提供免费的 [WebStorm](https://www.jetbrains.com/webstorm/) 授权
