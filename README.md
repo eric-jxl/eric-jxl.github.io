@@ -1,6 +1,6 @@
 ***This is a New Year countdown project with its own background music and special effects***
 
-## 一键部署
+## 🚀 快速部署
 
 ### Vercel 自动部署
 
