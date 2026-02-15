@@ -124,7 +124,6 @@ window.addEventListener("resize", onResize);
 window.onload = function starttime() {
 	time(h1, "2026/02/17"); // 2026年春节时间
 	ptimer = setTimeout(starttime, 1000); // 添加计时器
-	// fetchBingImage();
 };
 
 
@@ -170,8 +169,4 @@ function getData(url) {
 			});
 	});
 }
-// getData("https://api.vvhan.com/api/visitor.info").then((data) => {
-// 	console.log('%c 🍭 访问者信息：%s', 'color: #228B22;', JSON.stringify(data, null, 2))
-// }).catch((error) => {
-// 	console.error(error)
-// })
+
