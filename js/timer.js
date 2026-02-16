@@ -122,7 +122,7 @@ async function fetchBingImage() {
 window.addEventListener("resize", onResize);
 // requestAnimationFrame(render);
 window.onload = function starttime() {
-	time(h1, "2027/02/06"); // 2026年春节时间
+	time(h1, "2027/02/06"); // 2027年春节时间
 	ptimer = setTimeout(starttime, 1000); // 添加计时器
 };
 
@@ -138,7 +138,7 @@ function time(obj, futimg) {
 	var second = parseInt(time % 60); // 以60秒为一整份 取余 剩下秒数
 
 	obj.innerHTML =
-		"<br>距离2026年春节还有:<br>" +
+		"<br>距离2027年春节还有:<br>" +
 		day +
 		"天" +
 		hour +
