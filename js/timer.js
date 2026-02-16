@@ -122,7 +122,7 @@ async function fetchBingImage() {
 window.addEventListener("resize", onResize);
 // requestAnimationFrame(render);
 window.onload = function starttime() {
-	time(h1, "2026/02/17"); // 2026年春节时间
+	time(h1, "2027/02/06"); // 2026年春节时间
 	ptimer = setTimeout(starttime, 1000); // 添加计时器
 };
 
